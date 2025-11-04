@@ -1,0 +1,74 @@
+   <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Video Saya</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+        }
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        video {
+            width: 300px;
+            height: auto;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+        button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Galeri Video</h1>
+    <p>Klik video untuk memainkan. Gunakan tombol di bawah untuk kontrol semua.</p>
+    
+    <div class="video-container">
+        <video id="video1" controls>
+            <source src="harapan.mp4" type="video/mp4">
+            Browser tidak mendukung video.
+        </video>
+        <video id="vidio2" controls>
+            <source src="jaga.mp4" type="video/mp4">
+            Browser tidak mendukung video.
+        </video>
+        <!-- Tambahkan lebih banyak video di sini -->
+    </div>
+    
+    <button onclick="playAll()">Mainkan Semua</button>
+    <button onclick="pauseAll()">Jeda Semua</button>
+    
+    <script>
+        function playAll() {
+            const videos = document.querySelectorAll('video');
+            videos.forEach(video => video.play());
+        }
+        function pauseAll() {
+            const videos = document.querySelectorAll('video');
+            videos.forEach(video => video.pause());
+        }
+    </script>
+</body>
+</html>
+ 
+
